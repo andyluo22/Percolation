@@ -110,7 +110,7 @@ public class PercolationStats {
 
     // test client (see below)
     public static void main(String[] args) {
-        PercolationStats object = new PercolationStats(100, 100);
+        PercolationStats object = new PercolationStats(200, 100);
 
     }
 }
