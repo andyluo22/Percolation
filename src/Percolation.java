@@ -1,6 +1,7 @@
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 
+
 public class Percolation {
     int totalSites;
     int blockedSites;
@@ -11,7 +12,10 @@ public class Percolation {
     int openedSites;
 
 
-    // creates n-by-n grid, with all sites initially blocked
+    /** Create a new Percolation instance square grid
+     *
+     * @param n the length of the square grid
+     */
     public Percolation(int n) {
         this.num_col_rows = n;
         this.totalSites = n * n;
@@ -30,12 +34,17 @@ public class Percolation {
         }
     }
 
-    // opens the site (row, col) if it is not open already
+    /** Given a row and column position in the square grid open the site if not already open and union/join any
+     *  adjacent grid index elements into a singular connected set
+     *
+     * @param row  the row position of the square grid
+     * @param col  the column position of the square grid
+     */
     public void open(int row, int col) {
         int p;
         int q;
         if (updatedGrid[row][col] != grid[row][col]) {
-            return; // do nothing it is already open
+            return;
         } else {
             updatedGrid[row][col]++;
             blockedSites--;
@@ -79,10 +88,14 @@ public class Percolation {
             }
 
         }
-        //keep track of the blockedSites instance variable
     }
 
-    // is the site (row, col) open?
+    /** Given a site's position in the square grid, check to see if the site is open
+     *
+     * @param row the row of the site
+     * @param col the column of the site
+     * @return true if the site is open and false if not open
+     */
     public boolean isOpen(int row, int col) {
         if (updatedGrid[row][col] != grid[row][col]) {
             return true;
@@ -90,8 +103,13 @@ public class Percolation {
         return false;
     }
 
-    // is the site (row, col) full?
-    public boolean isFull(int row, int col) {
+    /** Given a site's position in the square grid, check to see if the site is full or connected to at least one of the
+     *  top most sites in the upper row
+     *
+     * @param row the row of the site
+     * @param col the column of the site
+     * @return true if the site is full and false if not full
+     */    public boolean isFull(int row, int col) {
         for (int i = 0; i < this.num_col_rows; i++) {
             if (this.sites1.connected(grid[0][i], grid[row][col])) {
                 return true;
