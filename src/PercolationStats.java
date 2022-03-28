@@ -13,7 +13,12 @@ public class PercolationStats {
     int grid_Size;
 
 
-    // perform independent trials on an n-by-n grid
+    /** Performs independent trials on an n-by-n grid
+     *
+     * @param n the size of the square grid
+     * @param trials the number of trials to be done
+     * @throws IllegalArgumentException if n<=0 or if trials <=0
+     */
     public PercolationStats(int n, int trials) {
         this.trials = trials;
         this.grid_Length = n;
@@ -58,7 +63,6 @@ public class PercolationStats {
             percolates = false;
         }
 
-        //Method for computing mean
         double sum = 0.0;
         double[] individual_means = new double[record_Trial_Samples.length];
 
@@ -67,18 +71,14 @@ public class PercolationStats {
             sum += (double) record_Trial_Samples[i] / this.grid_Size;
         }
         this.mean = sum / this.record_Trial_Samples.length;
-
         System.out.println("Mean:" + this.mean);
 
-        //Method for computing Stddev
         double numerator_Squared = 0;
         for (int i = 0; i < this.trials; i++) {
             numerator_Squared += Math.pow(individual_means[i] - this.mean, 2.0);
         }
         this.stddev = Math.sqrt(numerator_Squared / (this.record_Trial_Samples.length - 1));
-
         System.out.println("Standard Deviation:" + this.stddev);
-        //Method for computing Hi/Lo Confidence Intervals
 
         this.confidenceLo = this.mean - 1.96 * this.stddev / Math.sqrt(this.record_Trial_Samples.length);
         this.confidenceHi = this.mean + 1.96 * this.stddev / Math.sqrt(this.record_Trial_Samples.length);
@@ -88,22 +88,34 @@ public class PercolationStats {
 
     }
 
-    // sample mean of percolation threshold
+    /** Sample mean of percolation threshold
+     *
+     * @return the mean of the percolation threshold for the grid computed over n trials
+     */
     public double mean() {
         return this.mean;
     }
 
-    // sample standard deviation of percolation threshold
+    /** Sample standard deviation of percolation threshold
+     *
+     * @return the standard deviation of the percolation threshold for the grid computed over n trials
+     */
     public double stddev() {
         return this.stddev();
     }
 
-    // low endpoint of 95% confidence interval
+    /** Low endpoint of 95% confidence interval
+     *
+     * @return the low endpoint of 95% confidence interval
+     */
     public double confidenceLo() {
         return this.confidenceLo;
     }
 
-    // high endpoint of 95% confidence interval
+    /** High endpoint of 95% confidence interval
+     *
+     * @return the high endpoint of 95% confidence interval
+     */
     public double confidenceHi() {
         return this.confidenceHi;
     }
@@ -111,6 +123,5 @@ public class PercolationStats {
     // test client (see below)
     public static void main(String[] args) {
         PercolationStats object = new PercolationStats(10, 600);
-
     }
 }
