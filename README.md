@@ -17,4 +17,4 @@ In recent years, percolation theory, the mathematical study of percolation, has 
 
 
 #### Performance :chart_with_upwards_trend: :stopwatch:
- 
+Since the goal of this project is to model an n-by-n grid, each method in the implementation takes time proportional to n<sup> 2 </sup>.  All instance methods in the Percolation class also take constant time to operate.
