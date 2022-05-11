@@ -25,10 +25,9 @@ By looking at the source code in percolation stats, this experiment is then comp
 
 ![image](https://user-images.githubusercontent.com/68613171/167933268-9f1e8bfd-89a2-4472-ba03-9afafbd23e69.png)
 
-**Figure 2:**  The percolation threshold has been rigorously computed by researchers to be approximately around 0.593 or 59.3% of the sites in an n-by-n grid have to be open sites in order for a system to percolate in worst case scenarios.
+**Figure 2:**  The percolation threshold has been rigorously computed by researchers to be approximately around **0.593**.  In other words, **59.3%** of the sites in an n-by-n grid have to be open sites in order for a system to percolate in** worst case scenarios**.
 
-Thus, the mean values of the percolation threhsold through many trials of running a PercolationStats object was seen to be around approximately in the range 0.530 - 0.580.  I was unable to achieve a value that was above 0.580 through several runs in the sample client and this is very reasonable since 0.593 is usually achieved in the worst case.  By running the same inputs, we also expect different mean results as these sites are opened at uniformly random - there is an internal source of probability that changes the outcome each time despite inputting the same parameters.
-
+Thus, the mean values of the percolation threhsold through many trials of running a PercolationStats object was seen to be around approximately in the range 0.530 - 0.580.  I was unable to achieve a value that was above 0.580 through several runs in the sample client and this is very reasonable since 0.593 is usually achieved in the worst case.  By running the same inputs, we also expect different mean results as these sites are opened at uniformly random - there is an internal source of **randomness** that changes the outcome each time despite inputting the same parameters.
 
 #### Performance :chart_with_upwards_trend: :stopwatch:
 Since the goal of this project is to model an n-by-n grid, each method in the implementation takes time proportional to n<sup> 2 </sup>.  All instance methods in the Percolation class also take constant time to operate.  Exceptions are also handled and catched.
