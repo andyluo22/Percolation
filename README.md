@@ -29,5 +29,9 @@ By looking at the source code in percolation stats, this experiment is then comp
 
 Thus, the mean values of the percolation threhsold through many trials of running a PercolationStats object was seen to be around approximately in the range **0.530 - 0.580** - deviating from the theoretical value by a small range.  I was unable to achieve a value that was above 0.580 through several runs in the sample client and this is very reasonable since 0.593 is usually achieved in the worst case.  By running the same inputs, we also expect different mean results as these sites are opened at uniformly random - there is an internal source of **randomness** that changes the outcome each time despite inputting the same parameters.
 
+![image](https://user-images.githubusercontent.com/68613171/167946126-243c6f61-faa5-423c-afab-d851cf8a9ae3.png)
+
+**Figure 3:**  _Displays a series of time stamps at intervals of 50 sites opened in the PercolationVisualizer Client._
+
 #### Performance :chart_with_upwards_trend: :stopwatch:
 Since the goal of this project is to model an n-by-n grid, each method in the implementation takes time proportional to n<sup> 2 </sup>.  All instance methods in the Percolation class also take constant time to operate.  Exceptions are also handled and catched.
