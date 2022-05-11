@@ -5,9 +5,10 @@ In recent years, percolation theory, the mathematical study of percolation, has 
 
 ![image](https://user-images.githubusercontent.com/68613171/167926535-c4a36f2c-7e29-43bf-abe5-507ebd32bc53.png)
 
-**Figure 1:**  _To visualize the percolation model above, we can imagine each square constructing the system to be a site.  Each site is uniformly at random being chosen to be open and if there leads a path where the open top site is connected to one of the open bottom sites, then the system can be determined as a system that percolates_
+**Figure 1:**  _To visualize the percolation model above, we can imagine each square constructing the system to be a site that is either open, letting water to flow through, or closed, ceasing water flow.  We initially start with a grid fully composed of closed sites. Each site is then uniformly at random being chosen to be open. If there leads a path where the open top site is connected to one of the open bottom sites, then the system can be determined as a system that percolates_
 
 ## Significance
+The main challenges of writing a program that can efficiently determine the percolation threshold after running an n-by-n grid through a series of trials comes from creating a Percolation object as well as any instance methods that do not interfere with the immutability of the object itself.  Thus, the source code ensures immutability of these objects and instance methods.  Another strategy in solving this problem was to do as much caching as possible when constructing each object. By precomputing certain values and caching these values as instances, the time complexity and run time was greatly reduced throughout debugging the program.
 
 ### Monte Carlo Simulation :bulb:	
 
