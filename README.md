@@ -19,7 +19,7 @@ _2._ Chooses a site among one of the closed sites uniformly at random and then o
 
 _3._ The fraction of sites that are opened when the system percolates out of the total n-by-n grid spaces or sites provides an estimate of the percolation threshold value
 
-By looking at the source code in percolation stats, this experiment is then computed several times through different trials and averages throughout to obtain a more accurate estimate of the percolation threshold for a specific n-by-n input.  Some important statistical attributes that were used to characterize the system were: mean, standard deviation, and the low and high enpoint of the 95% confidence threshold.
+By looking at the source code in percolation stats, this experiment is then computed several times through different trials and the average of these values is then obtained for a more accurate estimate of the percolation threshold for a specific n-by-n input.  Some important statistical attributes that were used to characterize the system were: mean, standard deviation, and the low and high endpoint of the 95% confidence threshold.
 
 ### Percolation Statistics - Estimating the Threshold Value 
 
